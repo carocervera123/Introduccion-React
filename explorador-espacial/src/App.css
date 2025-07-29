@@ -1,101 +1,339 @@
 /* src/App.css */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1a1a2e; /* Fondo espacial oscuro */
-    color: #e0e0e0; /* Texto claro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1a1a2e; /* Fondo espacial oscuro */
+  color: #e0e0e0; /* Texto claro */
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinea el contenido arriba */
+  box-sizing: border-box;
 }
 
-.app-container {
-    background-color: #2a2a4a; /* Color del panel */
-    border: 2px solid #4a90e2; /* Borde azul brillante */
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 0 30px rgba(74, 144, 226, 0.4); /* Sombra brillante */
-    width: 100%;
-    max-width: 900px;
-    text-align: center;
+.main-container {
+  width: 100%;
+  max-width: 1000px; /* Un poco más ancho para acomodar ambos paneles */
+  display: flex;
+  flex-direction: column; /* Apila las secciones verticalmente */
+  gap: 30px; /* Espacio entre secciones */
 }
 
 h1 {
-    color: #00bcd4; /* Cian brillante */
-    font-size: 2.8em;
-    margin-bottom: 35px;
-    text-shadow: 0 0 8px rgba(0, 188, 212, 0.6);
+  color: #00bcd4; /* Cian brillante */
+  font-size: 2.8em;
+  margin-bottom: 35px;
+  text-shadow: 0 0 8px rgba(0, 188, 212, 0.6);
+  text-align: center;
 }
 
 h2 {
-    color: #a7f0ba; /* Verde claro */
-    font-size: 1.8em;
-    margin-top: 30px;
-    margin-bottom: 20px;
+  color: #a7f0ba; /* Verde claro */
+  font-size: 1.8em;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-.info-section p {
-    font-size: 1.2em;
-    margin: 10px 0;
-    font-weight: bold;
+.card {
+  background-color: #2a2a4a; /* Fondo de tarjeta (panel principal) */
+  border: 2px solid #4a90e2; /* Borde azul brillante */
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(74, 144, 226, 0.4); /* Sombra brillante */
+}
+
+/* --- Estilos del Panel de Control de la Nave --- */
+.panel-section .card {
+    text-align: center;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.info-card {
+  background-color: #3b3b6b; /* Fondo un poco más claro para las tarjetas de info */
+  border: 1px solid #5a5a8d;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  color: #a7f0ba;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .alerta {
-    color: #ff6347; /* Rojo para alertas */
-    animation: pulse 1.5s infinite alternate;
+  color: #ff6347; /* Rojo para alertas */
+  animation: pulse 1.5s infinite alternate;
 }
 
 @keyframes pulse {
-    from { transform: scale(1); opacity: 1; }
-    to { transform: scale(1.05); opacity: 0.8; }
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(1.05); opacity: 0.8; }
 }
 
 .actions-section {
-    margin-top: 30px;
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
-.btn-accion, .btn-toggle {
-    background-color: #00bcd4; /* Cian para botones */
-    color: #1a1a2e;
-    border: none;
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+}
+
+.btn.primary {
+  background-color: #00bcd4; /* Cian */
+  color: #1a1a2e;
+}
+
+.btn.primary:hover {
+  background-color: #008c9e;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.5);
+}
+
+.btn.secondary {
+  background-color: #5a5a8d; /* Gris azulado */
+  color: #e0e0e0;
+  box-shadow: 0 5px 15px rgba(90, 90, 141, 0.3);
+}
+
+.btn.secondary:hover {
+  background-color: #4a4a7a;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(90, 90, 141, 0.5);
+}
+
+.btn.toggle {
+  background-color: #ff6347; /* Rojo para el botón de apagar/encender */
+  box-shadow: 0 5px 15px rgba(255, 99, 71, 0.3);
+}
+
+.btn.toggle:hover {
+  background-color: #cc4c36;
+  box-shadow: 0 8px 20px rgba(255, 99, 71, 0.5);
+}
+
+hr {
+  border: none;
+  border-top: 2px dashed #5a5a8d;
+  margin: 40px auto;
+  width: 80%;
+}
+
+/* --- Estilos de la Bitácora de Exploración --- */
+
+.resumen-bitacora {
+    font-size: 1.3em;
+    color: #b0c4de;
+    margin-bottom: 30px;
+    font-style: italic;
+    text-align: center;
+}
+
+.form-section .card {
+    text-align: left; /* Alinea el texto a la izquierda dentro de las tarjetas */
+}
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: calc(100% - 24px); /* Ancho completo con padding */
+  padding: 12px;
+  border: 1px solid #5a5a8d;
+  border-radius: 8px;
+  background-color: #4a4a7a;
+  color: #e0e0e0;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  border-color: #00bcd4;
+}
+
+.form-group textarea {
+  resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+input[type="file"] {
+    display: block;
+    margin-top: 10px;
+    color: #a7f0ba;
+}
+
+.imagen-preview {
+    max-width: 150px;
+    height: auto;
     border-radius: 8px;
-    padding: 12px 25px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3);
+    margin-top: 15px;
+    border: 1px solid #00bcd4;
+    display: block;
 }
 
-.btn-accion:hover, .btn-toggle:hover {
-    background-color: #008c9e;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.5);
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 25px;
 }
 
-.btn-toggle {
-    background-color: #ff6347; /* Rojo para el botón de apagar/encender */
-    box-shadow: 0 5px 15px rgba(255, 99, 71, 0.3);
+.btn.edit {
+  background-color: #ffbb33; /* Naranja para editar */
+  color: #1a1a2e;
+  box-shadow: 0 5px 15px rgba(255, 187, 51, 0.3);
 }
 
-.btn-toggle:hover {
-    background-color: #cc4c36;
-    box-shadow: 0 8px 20px rgba(255, 99, 71, 0.5);
+.btn.edit:hover {
+  background-color: #cc992a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 187, 51, 0.5);
+}
+
+.btn.delete {
+  background-color: #dc3545; /* Rojo para eliminar */
+  color: white;
+  box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+.btn.delete:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(220, 53, 69, 0.5);
+}
+
+.lista-section {
+    text-align: center;
+}
+
+.mensaje-vacio {
+    font-style: italic;
+    color: #a0a0a0;
+    margin-top: 20px;
 }
 
 .planetas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.planeta-item {
+  background-color: #4a4a7a; /* Fondo de cada tarjeta de planeta en la lista */
+  border: 1px solid #5a5a8d;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center; /* Centra el contenido de cada ítem */
+}
+
+.planeta-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.planeta-item h3 {
+  color: #a7f0ba; /* Verde claro para el nombre */
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+.planeta-thumbnail {
+  max-width: 100%;
+  height: 120px; /* Altura fija para miniaturas */
+  object-fit: cover; /* Recorta la imagen para que encaje */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #00bcd4;
+}
+
+.fecha-registro {
+    font-size: 0.9em;
+    color: #a0a0a0;
+    margin-top: 10px;
+}
+
+.item-actions {
+    margin-top: 15px;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.item-actions .btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+/* Detalles del planeta seleccionado */
+.detalles-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.detalles-imagen {
+    max-width: 100%;
+    height: 250px; /* Altura fija para imagen de detalle */
+    object-fit: contain; /* Ajusta la imagen completa */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #00bcd4;
+}
+
+.detalles-section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.detalles-actions {
+    display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
