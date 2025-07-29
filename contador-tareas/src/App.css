@@ -1,0 +1,142 @@
+/* src/App.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+h2 {
+  color: #34495e;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+h3 {
+  color: #1abc9c;
+  margin-top: 30px;
+  font-size: 1.5em;
+}
+
+.card {
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allows inputs to wrap on smaller screens */
+  justify-content: center;
+}
+
+.input-field {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  flex: 1; /* Allows inputs to grow and shrink */
+  min-width: 150px; /* Minimum width before wrapping */
+}
+
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn {
+  background-color: #1abc9c;
+  color: white;
+  flex-shrink: 0; /* Prevents button from shrinking too much */
+}
+
+.add-btn:hover {
+  background-color: #16a085;
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed #bdc3c7;
+  margin: 30px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  background-color: #fcfcfc;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.task-name {
+  font-weight: bold;
+  color: #34495e;
+}
+
+.task-duration {
+  color: #7f8c8d;
+}
+
+.total-time-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.total-duration {
+  color: #1abc9c;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.empty-message {
+  font-style: italic;
+  color: #95a5a6;
+}
+
+.status-message {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-top: 10px;
+}
