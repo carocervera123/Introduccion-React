@@ -1,0 +1,152 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #282c34;
+  color: #f8f8f2;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.game-container {
+  background-color: #3a3f4c;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  box-sizing: border-box;
+  border: 2px solid #61dafb;
+}
+
+h2 {
+  color: #61dafb;
+  font-size: 2.2em;
+  margin-bottom: 25px;
+  text-shadow: 0 0 5px rgba(97, 218, 251, 0.5);
+}
+
+.game-intro {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  color: #b3b3b3;
+}
+
+.input-number-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.input-field {
+  padding: 12px 18px;
+  border: 2px solid #555;
+  border-radius: 8px;
+  font-size: 1.1em;
+  background-color: #4a4f5d;
+  color: #f8f8f2;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 60%; 
+  max-width: 180px;
+}
+
+.input-field:focus {
+  border-color: #61dafb;
+  box-shadow: 0 0 10px rgba(97, 218, 251, 0.4);
+}
+
+.input-field::placeholder {
+  color: #888;
+}
+
+.btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn.primary {
+  background-color: #61dafb;
+  color: #282c34;
+  box-shadow: 0 4px 10px rgba(97, 218, 251, 0.3);
+}
+
+.btn.primary:hover:not(:disabled) {
+  background-color: #45b8d4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(97, 218, 251, 0.5);
+}
+
+.btn.secondary {
+  background-color: #21a1f1;
+  color: white;
+  box-shadow: 0 4px 10px rgba(33, 161, 241, 0.3);
+}
+
+.btn.secondary:hover:not(:disabled) {
+  background-color: #1a8edb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(33, 161, 241, 0.5);
+}
+
+.restart-btn {
+    margin-top: 30px; 
+}
+
+.message {
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.message-success {
+  background-color: #28a745;
+  color: white;
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.6);
+}
+
+.message-info {
+  background-color: #007bff;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+}
+
+.message-error {
+  background-color: #dc3545;
+  color: white;
+  box-shadow: 0 0 15px rgba(220, 53, 69, 0.6);
+}
+
+.attempts-counter {
+  font-size: 1.1em;
+  color: #b3b3b3;
+  margin-top: 15px;
+}
